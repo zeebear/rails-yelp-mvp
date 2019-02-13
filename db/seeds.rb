@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "creating articles…"
+10.times do
+  restaurant = Restaurant.new(
+    name: Faker::Restaurant.unique.name,
+    address: Faker::Address.unique.city
+    phone_number: Faker::PhoneNumber.unique.phone_number
+    )
+  article.save!
+end
+
+puts "finished creating articles"
+
