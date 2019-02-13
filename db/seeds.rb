@@ -10,11 +10,11 @@ puts "creating articles…"
 10.times do
   restaurant = Restaurant.new(
     name: Faker::Restaurant.unique.name,
-    address: Faker::Address.unique.city
-    phone_number: Faker::PhoneNumber.unique.phone_number
+    address: Faker::Address.unique.city,
+    phone_number: Faker::PhoneNumber.unique.phone_number,
+    category: CATEGORIES.sample
     )
-  article.save!
+  restaurant.save!
 end
 
 puts "finished creating articles"
-
