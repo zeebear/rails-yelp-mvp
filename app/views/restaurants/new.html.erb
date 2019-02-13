@@ -1,5 +1,17 @@
 <h1>New Restaurant</h1>
 
-<%= render 'form', restaurant: @restaurant %>
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= link_to 'Back', restaurants_path %>
+  <div class="form-inputs">
+    <%= f.input :name, label: 'Restaurant name' %>
+    <%= f.input :address, label: 'Restaurant address' %>
+    <%= f.input :phone_number, label: 'Restaurant telephone number' %>
+    <%= f. %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
